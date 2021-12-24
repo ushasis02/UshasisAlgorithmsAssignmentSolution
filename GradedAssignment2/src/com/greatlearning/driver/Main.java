@@ -64,21 +64,22 @@ public class Main {
     	   System.out.println("-----------------------------------------------");
        }
 
-      public static void ascendingorder (double [] price, int numb) {
-    	  MergeSortImplementation mergesortprice = new MergeSortImplementation();
-    	  mergesortprice.sort (price, 0, numb-1);
-    	  System.out.println("Stock prices in ascending order are : \n");
-    	  for (int j=0; j<numb; j++)
-    		  System.out.print(price[j] + "  ");
-      }
-
+        public static void ascendingorder (double [] price, int numb) {
+      	  MergeSortImplementation mergesortprice = new MergeSortImplementation();
+      	  mergesortprice.sort (price, 0, numb-1);
+      	  System.out.println("Stock prices in ascending order are : \n");
+      	  for (int k=numb-1; k>=0; k--)
+      		  System.out.print(price[k] + "  ");
+        }
       public static void descendingorder (double [] price, int numb) {
     	  MergeSortImplementation mergesortprice = new MergeSortImplementation();
     	  mergesortprice.sort (price, 0, numb-1);
     	  System.out.println("Stock prices in descending order are : \n");
-    	  for (int k=numb-1; k>=0; k--)
-    		  System.out.print(price[k] + "  ");
+    	  for (int j=0; j<numb; j++)
+    		  System.out.print(price[j] + "  ");
       }
+
+      
 
       public static void stockrose (boolean [] comp, int numb) {
     	  int count =0;
@@ -98,10 +99,10 @@ public class Main {
     	  Scanner sc2 = new Scanner (System.in);
     	  System.out.println("Enter the key value");
     	  double key = sc2.nextDouble();
-    	  int flag =0;
+    	  boolean flag = false;
     	  for (int i=0; i<numb; i++)
-    		  if (price[i] == key) flag =i;  
-    	  if (flag !=0)
+    		  if (price[i] == key) flag =true;  
+    	  if (flag == true)
     		  System.out.println("Stock of value " + key + " is present"); 
     	  else 
     		  System.out.println("Value not found");
